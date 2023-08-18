@@ -1,8 +1,8 @@
 # Makefile
 
-.PHONY: 2 3 5 6 8 10 11 all
+.PHONY: 2 3 5 6 8 10 12 all
 
-all: 2 3 6 8 10 11
+all: 2 3 6 8 10 12
 
 2:
 	@./steps/2.sh
@@ -22,5 +22,5 @@ all: 2 3 6 8 10 11
 10:
 	@./steps/10.sh
 
-11:
-	@./steps/11.sh
+12:
+	@./steps/12.sh
