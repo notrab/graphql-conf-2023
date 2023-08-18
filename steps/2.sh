@@ -26,6 +26,6 @@ mkdir -p grafbase/resolvers
 
 cat <<EOT > grafbase/resolvers/hello.ts
 export default function HelloResolver(_, { name }) {
-	return name || "world";
+  return name || "world";
 }
 EOT

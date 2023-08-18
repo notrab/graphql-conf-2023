@@ -37,13 +37,14 @@ mv "$temp_file" grafbase/grafbase.config.ts
 
 cat <<EOT > grafbase/resolvers/rsvp.ts
 export default async function RSVPResolver(_, { input }) {
-	const { name, status } = input;
+  const { name, status } = input;
 
   // ... await "custom business logic"
 
-	return {
-		name,
-		status
-	}
+  return {
+    name,
+    status,
+  };
 }
+
 EOT
