@@ -32,7 +32,7 @@ g.mutation("rsvp", {
   resolver: "rsvp",
 });
 
-const stripe = connector.OpenAPI({
+const stripe = connector.OpenAPI("Stripe", {
   schema:
     "https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.json",
   headers: (headers) => {
@@ -43,7 +43,7 @@ const stripe = connector.OpenAPI({
   },
 });
 
-g.datasource(stripe, { namespace: "Stripe" });
+g.datasource(stripe);
 
 const gravatarRating = g.enum("GravatarRating", ["g", "pg", "r", "x"]);
 
@@ -62,6 +62,11 @@ g.extend("StripeCustomer", {
 
 export default config({
   schema: g,
+  auth: {
+    rules: (rules) => {
+      rules.public();
+    },
+  },
   cache: {
     rules: [
       {

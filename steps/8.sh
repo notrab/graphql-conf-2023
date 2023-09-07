@@ -4,7 +4,7 @@ temp_file=$(mktemp)
 
 awk '
 BEGIN {
-    content = "const stripe = connector.OpenAPI({\n" \
+    content = "const stripe = connector.OpenAPI(\"Stripe\", {\n" \
     "  schema:\n" \
     "    \"https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.json\",\n" \
     "  headers: (headers) => {\n" \
@@ -15,7 +15,7 @@ BEGIN {
     "  },\n" \
     "});\n" \
     "\n" \
-    "g.datasource(stripe, { namespace: \"Stripe\" });\n\n"
+    "g.datasource(stripe);\n\n"
 }
 {
     if ($0 ~ /^export default config\({/) {
