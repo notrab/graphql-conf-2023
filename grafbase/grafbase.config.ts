@@ -15,11 +15,11 @@ mongo.model("User", {
 
 g.datasource(mongo);
 
-const postgres = connector.Neon("Postgres", {
-  url: g.env("NEON_API_URL"),
-});
+// const postgres = connector.Neon("Postgres", {
+//   url: g.env("NEON_API_URL"),
+// });
 
-g.datasource(postgres);
+// g.datasource(postgres);
 
 const contentful = connector.GraphQL("Contentful", {
   url: g.env("CONTENTFUL_API_URL"),
